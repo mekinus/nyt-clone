@@ -1,3 +1,17 @@
+
+ul
+{
+ list-style-type: none;
+}
+
+ button
+{
+  background-color: #000000;
+  color: white;
+  border: 0px solid black;
+  border-radius: 10%;
+  width: 64px;
+}
 .header-container {
   margin: 0px;
   height: 50px;
@@ -7,12 +21,34 @@
 
   flex-wrap: wrap;
 }
+
+.flexbox
+{
+  display: flex;
+  margin: 0 0 0 0;
+
+}
 .left-nav {
   display: flex;
   flex: 2;
 }
 .left-logo {
   flex: 1;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+.left-logo a
+{
+  color: #000000;
+  text-decoration: none;
+}
+
+.left-logo a:hover
+{
+  text-decoration: underline;
 }
 .menu {
   flex: 0.1;
@@ -24,9 +60,13 @@
   display: flex;
   flex: 1;
 }
-.logo {
-  height: 64px;
-  width: 190px;
+.logo-container {
+flex : 1;
+}
+.logo
+{
+  width: 160px;
+  height: 32px;
 }
 
 .right-nav {
@@ -43,4 +83,12 @@
 }
 .right-logo {
   margin-right: 10px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.right-logo a {
+
+  color: #000000;
 }
