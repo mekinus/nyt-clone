@@ -76,7 +76,7 @@ flex : 1;
  }
  .title h1{
 
-  font-family: 'NYTCheltenham';   
+  font-family: 'NYTCheltenham';
  }
  .title h3{
   font-family: 'NYTFranklin';
@@ -86,9 +86,33 @@ flex : 1;
  .title p {
    font-family: 'NYTImperial';
  }
- .social-icons{
-   list-style-type: none;
+ .by
+ {
+  margin-right: 350px;
  }
-.social-icons i{
- font-size: 200px;
-}
+
+
+ .wrap
+ {
+   display: flex;
+ }
+
+ .date
+ {
+  flex: 1;
+  margin-left: 0px;
+  margin-right: 220px;
+ }
+ .social-icons{
+
+   display: flex;
+   list-style-type: none;
+   margin-left: 20px;
+   margin-right:
+ }
+
+ ul li i
+ {
+
+   margin-right: 10px;
+ }
