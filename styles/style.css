@@ -1,0 +1,14 @@
+
+.header-container
+{
+  display: flex;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+.logo
+{
+  flex: 1;
+  width: 156px;
+  height: 40px;
+}
