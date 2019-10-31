@@ -3,6 +3,7 @@
   margin: 0 0 0 0;
   list-style-type: none;
 }
+
 .login-btn {
   background-color: #000000;
   color: white;
@@ -11,6 +12,7 @@
   width: 64px;
   margin-right: 15px;
 }
+
 .left-logo {
   flex: 1;
   font-family: "NYTFranklin";
@@ -26,9 +28,11 @@
 .left-logo a:hover {
   text-decoration: underline;
 }
+
 .menu {
   flex: 0.1;
 }
+
 .search {
   flex: 0.1;
 }
@@ -36,10 +40,12 @@
 .logo-container {
   flex: 1;
 }
+
 .logo {
   width: 160px;
   height: 32px;
 }
+
 .right-logo {
   margin-right: 20px;
   font-family: "NYTFranklin";
@@ -56,47 +62,57 @@
   height: 70px;
   margin-left: 300px;
 }
+
 .title-1 h1 {
   font-family: "NYTCheltenham";
 }
+
 .title-2 {
   width: 1000px;
   height: 500px;
   margin-top: 20px;
   margin-left: 200px;
 }
+
 .title-2 a img {
   width: 1000px;
   height: 500px;
 }
+
 .title-3 {
   margin-top: 0px;
   margin-left: 200px;
 }
+
 .title-3 p {
   font-family: "NYTImperial";
   font-size: 14px;
   color: #666666;
   margin-bottom: 0px;
 }
+
 #credit {
   color: #888888;
   margin-top: 0px;
 }
+
 .by {
   top: 20px;
   margin-left: 30%;
 }
+
 .by h3 {
   font-family: "NYTFranklin";
   font-weight: bold;
   font-size: 15px;
   color: #333333;
 }
+
 .article-descp {
   display: flex;
   justify-content: center;
 }
+
 .date {
   margin-right: 120px;
   font-family: "NYTFranklin";
@@ -104,6 +120,7 @@
   font-weight: normal;
   color: #333333;
 }
+
 .social-icons {
   display: flex;
   list-style-type: none;
@@ -112,15 +129,18 @@
 ul li i {
   margin-right: 10px;
 }
+
 .social-icons li a img {
   height: 15px;
   width: 15px;
   margin: 7px;
 }
+
 .social-icons li:hover {
   background: white;
   border: 1px solid #d4d4d4;
 }
+
 .social-icons li {
   height: 28px;
   width: 28px;
@@ -129,42 +149,49 @@ ul li i {
   text-align: center;
   margin: 10px;
 }
-.article{
+
+.article {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.article p{
+
+.article p {
   font-family: 'NYTImperial';
   font-size: 20px;
   font-weight: lighter;
   color: #333333;
   align-self: center;
 }
- #img-1{
-   height: 600px;
-   width: 900px;
- }
- #img-2{
-   width: 700px;
-   height: 400px;
-   
- }
- .article iframe{
-   height: 400px;
-   width: 800px;
- }
- #i-para{
-   font-family: 'NYTImperial';
-   font-size: 15px;
-   font-weight: lighter;
-   color: #888888;
- }
- .article-descp2 {
+
+#img-1 {
+  height: 600px;
+  width: 900px;
+}
+
+#img-2 {
+  width: 700px;
+  height: 400px;
+}
+
+.article iframe {
+  height: 400px;
+  width: 800px;
+}
+
+#i-para {
+  font-family: 'NYTImperial';
+  font-size: 15px;
+  font-weight: lighter;
+  color: #888888;
+}
+
+.article-descp2 {
   display: flex;
   justify-content: center;
 }
-.article-descp button{
+
+.article-descp button {
   width: 350px;
   height: 40px;
   margin-top: 15px;
@@ -183,4 +210,68 @@ ul li i {
   border-radius: 3px;
   padding: 5px 0px;
   transition: background-color 0.6s ease 0s;
+}
+
+.bottom-headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-header-01 {
+  flex: 3;
+  border-top: 1px solid black;
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  margin-left: 40px;
+  height: 38px;
+  width: 900;
+}
+
+.bottom-header-02 {
+  flex: 1;
+  border-top: 1px solid black;
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.bottom-container {
+  display: flex;
+  width: 1000px;
+  height: 612px;
+}
+
+.boxes {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box {
+  flex: 1 1 200px;
+  margin-bottom: 150px;
+}
+
+.box img {
+  height: 200px;
+  width: 300px;
+}
+
+.box-thumbnail {
+  text-align: right;
+}
+
+.box-description {
+  color: #888888;
+  margin-left: 20px;
+  font-weight: lighter;
+  font-family: 'NYTImperial';
+}
+
+.box-text {
+  font-family: "NYTCheltenham";
+  margin-left: 20px;
+  color: #333333;
+  font-weight: bold;
 }
