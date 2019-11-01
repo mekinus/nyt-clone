@@ -152,16 +152,23 @@ ul li i {
 
 .article {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  border: solid #333333;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article p {
-  font-family: 'NYTImperial';
+  font-family: "NYTImperial";
   font-size: 20px;
   font-weight: lighter;
   color: #333333;
-  align-self: center;
+  line-height: 1.3em;
+}
+.article-img1 {
+  background: url("/images/2.png");
+}
+.article-img2 {
+  margin-right: 70px;
 }
 
 #img-1 {
@@ -170,20 +177,29 @@ ul li i {
 }
 
 #img-2 {
-  width: 700px;
-  height: 400px;
+  width: 570px;
+  height: 350px;
 }
 
 .article iframe {
-  height: 400px;
-  width: 800px;
+  height: 300px;
+  width: 620px;
+  border: none;
 }
 
-#i-para {
-  font-family: 'NYTImperial';
+#i-para1 {
+  font-family: "NYTImperial";
   font-size: 15px;
   font-weight: lighter;
+  color: #666666;
+  margin: 10px 0 0 0;
+}
+#i-para2 {
+  font-family: "NYTImperial";
+  font-size: 13px;
+  font-weight: lighter;
   color: #888888;
+  margin: 0px;
 }
 
 .article-descp2 {
@@ -214,33 +230,58 @@ ul li i {
 
 .bottom-headers {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 1200px;
 }
-
-.bottom-header-01 {
-  flex: 3;
-  border-top: 1px solid black;
-  font-family: "NYTFranklin";
-  font-weight: bold;
-  margin-left: 40px;
-  height: 38px;
-  width: 900;
-}
-
-.bottom-header-02 {
-  flex: 1;
-  border-top: 1px solid black;
-  font-family: "NYTFranklin";
-  font-weight: bold;
-  margin-left: 30px;
-}
-
-.bottom-container {
+.bottom-leftsidebar {
   display: flex;
-  width: 1000px;
-  height: 612px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 70%;
+  height: 720px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
-
+.bottom-leftsidebar h5 {
+  width: 70%;
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+}
+.bottom-rightsidebar {
+  width: 25%;
+  height: 500px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-top: 1px solid black;
+}
+.bottom-rightsidebar a {
+  text-decoration: none;
+}
+.bottom-rightsidebar a h4 {
+  font-family: "NYTCheltenham";
+  font-weight: 575;
+  color: #333333;
+  font-size: 19px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+  margin-bottom: 3px;
+  margin-top: 2px;
+}
+.bottom-rightsidebar a h4:hover {
+  color: #666666;
+}
+.bottom-rightsidebar a h5 {
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  color: #333333;
+  font-size: 16px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+}
 .boxes {
   list-style-type: none;
   display: flex;
@@ -248,25 +289,17 @@ ul li i {
   justify-content: space-between;
 }
 
-.box {
-  flex: 1 1 200px;
-  margin-bottom: 150px;
-}
-
-.box img {
-  height: 200px;
-  width: 300px;
-}
-
 .box-thumbnail {
   text-align: right;
+  height: 200px;
+  width: 275px;
 }
 
 .box-description {
   color: #888888;
   margin-left: 20px;
   font-weight: lighter;
-  font-family: 'NYTImperial';
+  font-family: "NYTImperial";
 }
 
 .box-text {
@@ -276,34 +309,75 @@ ul li i {
   font-weight: bold;
 }
 
-.popular-div
-{
+.popular-div {
   position: absolute;
   height: 1035px;
   width: 280px;
 }
 
-.popular-div h4
-{
+.popular-div h4 {
   font-family: "NYTFranklin";
   font-weight: bold;
   border-bottom: 1px solid grey;
   padding-bottom: 20px;
 }
 
-ul li hr
-{
+ul li hr {
   border: 0.5px solid black;
   margin-bottom: 60px;
 }
 
-#editors
-{
-font-family: "NYTFranklin";
-font-weight: bold;
-position: absolute;
-left: 70px;
-right: 2px;
-bottom: 1px;
-top: 8210px;
+#editors {
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  position: absolute;
+  left: 70px;
+  right: 2px;
+  bottom: 1px;
+  top: 8210px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+}
+
+.left2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 400px;
+  margin: 20px;
+}
+.left2 h5 {
+  width: 70%;
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 500px;
+  border: solid #000000;
+}
+.left-footer {
+  width: 75%;
+  height: 400px;
+  border: solid #333333;
+}
+.right-footer {
+  width: 23%;
+  height: 400px;
+  border: solid #333333;
+}
+.bottom-footer {
+  width: 100%;
+  height: 50px;
+  border: solid red;
 }
