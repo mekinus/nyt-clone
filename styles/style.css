@@ -275,3 +275,35 @@ ul li i {
   color: #333333;
   font-weight: bold;
 }
+
+.popular-div
+{
+  position: absolute;
+  height: 1035px;
+  width: 280px;
+}
+
+.popular-div h4
+{
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+}
+
+ul li hr
+{
+  border: 0.5px solid black;
+  margin-bottom: 60px;
+}
+
+#editors
+{
+font-family: "NYTFranklin";
+font-weight: bold;
+position: absolute;
+left: 70px;
+right: 2px;
+bottom: 1px;
+top: 8210px;
+}
