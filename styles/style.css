@@ -1,7 +1,12 @@
+nav {
+  background-color: #fff;
+  border-bottom: 1.2px solid #e2e2e2;
+}
 .flexbox {
   display: flex;
   margin: 0 0 0 0;
   list-style-type: none;
+  padding-left: 10px;
 }
 
 .login-btn {
@@ -42,7 +47,7 @@
 }
 
 .logo {
-  width: 160px;
+  width: 200px;
   height: 32px;
 }
 
@@ -111,6 +116,7 @@
 .article-descp {
   display: flex;
   justify-content: center;
+  height: 100px;
 }
 
 .date {
@@ -152,7 +158,6 @@ ul li i {
 
 .article {
   display: flex;
-  border: solid #333333;
   flex-direction: column;
   align-items: center;
 }
@@ -164,8 +169,26 @@ ul li i {
   color: #333333;
   line-height: 1.3em;
 }
+.article p a {
+  color: #326891;
+}
+.article p a:hover {
+  text-decoration: none;
+}
 .article-img1 {
   background: url("/images/2.png");
+}
+.article-img1 h2 {
+  font-family: "NYTCheltenham";
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+.article-img1 p {
+  font-family: "NYTCheltenham";
+  font-size: 15px;
+  font-weight: normal;
+  color: #666666;
 }
 .article-img2 {
   margin-right: 70px;
@@ -195,6 +218,20 @@ ul li i {
   margin: 10px 0 0 0;
 }
 #i-para2 {
+  font-family: "NYTImperial";
+  font-size: 13px;
+  font-weight: lighter;
+  color: #888888;
+  margin: 0px;
+}
+#i-para3 {
+  font-family: "NYTImperial";
+  font-size: 15px;
+  font-weight: lighter;
+  color: #666666;
+  margin: 10px 0 0 0;
+}
+#i-para4 {
   font-family: "NYTImperial";
   font-size: 13px;
   font-weight: lighter;
@@ -369,34 +406,24 @@ ul li hr {
   width: 75%;
   height: 400px;
   display: flex;
-  border-right: 1px solid #F7F7F7;
-  border-bottom: 1px solid #F7F7F7;
-  border-top: 1px solid #F7F7F7;
+  border-right: 1px solid #f7f7f7;
+  border-bottom: 1px solid #f7f7f7;
+  border-top: 1px solid #f7f7f7;
 }
 
-.left-footer-list
-{
+.left-footer-list {
   list-style-type: none;
   flex: 1;
 }
 
-.left-footer-list a
-{
+.left-footer-list a {
   text-decoration: none;
   font-family: "NYTFranklin";
   color: #000000;
 }
 
-.left-footer-list a:hover
-{
+.left-footer-list a:hover {
   text-decoration: underline;
-}
-
-.left-footer-list h5
-{
-  font-family: "NYTFranklin";
-  color: #000000;
-  font-weight: bold;
 }
 .right-footer {
   width: 23%;
@@ -406,34 +433,58 @@ ul li hr {
 .bottom-footer {
   width: 100%;
   height: 50px;
-
+  border-top: 1px solid rgb(235, 235, 235);
 }
 
-.footer-header
-{
+.footer-header {
   display: flex;
-
 }
 
-.footer-header li
-{
-
+.footer-header li {
   list-style-type: none;
-  flex: 1 1 ;
+  flex: 1 1;
   margin-left: 0;
 }
 
-.footer-header li a
-{
+.footer-header li a {
   color: grey;
- font-family: "NYTFranklin";
- font-weight: lighter;
- text-decoration: none;
- font-size: 0.7rem;
+  font-family: "NYTFranklin";
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 0.7rem;
 }
 
+.footer-header li a:hover {
+  text-decoration: underline;
+}
+.left-footer-list li img {
+  height: 15px;
+  width: 15px;
+  margin-right: 7px;
+}
 
-.footer-header li a:hover
-{
+.left-footer-a {
+  font-family: "NYTFranklin";
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+a:-webkit-any-link {
+  cursor: pointer;
+}
+.right-footer-list {
+  list-style-type: none;
+  flex: 1;
+}
+
+.right-footer-list a {
+  text-decoration: none;
+  font-family: "NYTFranklin";
+  color: #000000;
+}
+
+.right-footer-list a:hover {
   text-decoration: underline;
 }
