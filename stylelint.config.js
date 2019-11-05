@@ -3,7 +3,7 @@
 module.exports = {
   "extends": "stylelint-config-recommended",
   "rules": {
-    "at-rule-empty-line-before": [ "always", {
+ "font-family-no-missing-generic-family-keyword": null , "no-descending-specificity": null  "at-rule-empty-line-before": [ "always", {
       except: [
         "blockless-after-same-name-blockless",
         "first-nested",
@@ -21,7 +21,7 @@ module.exports = {
     "block-opening-brace-space-after": "always-single-line",
     "block-opening-brace-space-before": "always",
     "color-hex-case": "lower",
-    "color-hex-length": "short",
+    "color-hex-length": null,
     "comment-empty-line-before": [ "always", {
       except: ["first-nested"],
       ignore: ["stylelint-commands"],
@@ -60,12 +60,12 @@ module.exports = {
     "function-comma-newline-after": null,
     "function-comma-space-after": "always-single-line",
     "function-comma-space-before": "never",
-    "function-max-empty-lines": 0,
+    "function-max-empty-lines": null,
     "function-name-case": "lower",
     "function-parentheses-newline-inside": "always-multi-line",
     "function-parentheses-space-inside": "never-single-line",
     "function-whitespace-after": "always",
-    "indentation": 2,
+    "indentation": null,
     "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "media-feature-colon-space-after": "always",
@@ -77,12 +77,12 @@ module.exports = {
     "media-query-list-comma-newline-after": "always-multi-line",
     "media-query-list-comma-space-after": "always-single-line",
     "media-query-list-comma-space-before": "never",
-    "no-eol-whitespace": true,
+    "no-eol-whitespace": null,
     "no-missing-end-of-source-newline": true,
-    "number-leading-zero": "always",
+    "number-leading-zero": null,
     "number-no-trailing-zeros": true,
     "property-case": "lower",
-    "rule-empty-line-before": [ "always-multi-line", {
+    "rule-empty-line-before": [ null, {
       except: ["first-nested"],
       ignore: ["after-comment"],
     } ],
