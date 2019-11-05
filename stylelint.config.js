@@ -2,7 +2,7 @@
 
 module.exports = {
   "extends": "stylelint-config-recommended",
-  "rules": { "order/properties-alphabetical-order": null,
+  "rules": {
     "at-rule-empty-line-before": [ "always", {
       except: [
         "blockless-after-same-name-blockless",
