@@ -70,7 +70,7 @@ nav {
 .title-1 {
   width: 450px;
   height: 70px;
-  margin-left: 300px;
+  margin-left: 450px;
 }
 
 .top-nav {
@@ -534,6 +534,15 @@ a:-webkit-any-link {
   width: 1024px;
   height: 180px;
   top: 4320px;
+  left: 200px;
+}
+
+.floating-div-02 {
+  position: absolute;
+  display: flex;
+  width: 1024px;
+  height: 180px;
+  top: 4610px;
   left: 200px;
 }
 
