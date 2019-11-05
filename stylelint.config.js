@@ -3,7 +3,7 @@
 module.exports = {
   "extends": "stylelint-config-recommended",
   "rules": {
- "font-family-no-missing-generic-family-keyword": null , "no-descending-specificity": null , "at-rule-empty-line-before": [ "always", {
+ "font-family-no-missing-generic-family-keyword": null , "no-descending-specificity": null , "at-rule-empty-line-before": [ null, {
       except: [
         "blockless-after-same-name-blockless",
         "first-nested",
@@ -47,7 +47,7 @@ module.exports = {
     "declaration-colon-newline-after": null,
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
-    "declaration-empty-line-before": [ "always", {
+    "declaration-empty-line-before": [ null, {
       except: [
         "after-declaration",
         "first-nested",
@@ -67,7 +67,7 @@ module.exports = {
     "function-whitespace-after": "always",
     "indentation": null,
     "length-zero-no-unit": true,
-    "max-empty-lines": 1,
+    "max-empty-lines": null,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
