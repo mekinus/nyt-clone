@@ -57,7 +57,7 @@ module.exports = {
         "inside-single-line-block",
       ],
     } ],
-    "function-comma-newline-after": "always-multi-line",
+    "function-comma-newline-after": null,
     "function-comma-space-after": "always-single-line",
     "function-comma-space-before": "never",
     "function-max-empty-lines": 0,
