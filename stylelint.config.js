@@ -3,7 +3,7 @@
 module.exports = {
   "extends": "stylelint-config-recommended",
   "rules": {
- "font-family-no-missing-generic-family-keyword": null , "no-descending-specificity": null  "at-rule-empty-line-before": [ "always", {
+ "font-family-no-missing-generic-family-keyword": null , "no-descending-specificity": null , "at-rule-empty-line-before": [ "always", {
       except: [
         "blockless-after-same-name-blockless",
         "first-nested",
