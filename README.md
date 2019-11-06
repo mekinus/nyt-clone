@@ -51,9 +51,7 @@ Leonardo Couto - [@Leonard83911553](https://twitter.com/Leonardo83911553) - mach
 
 Tashfeen - raotashfeen25@gmail.com
 
-Project Link: [xxx](https://github.com/mekinus/firstHTMLProject/)
-
-*Live preview* - (xxx)
+*Live preview* - (https://mekinus.github.io/nyt-clone/)
 
 ## Project specific
 * Please use <aside> tag for Editor's picks section on the rightmost side.
