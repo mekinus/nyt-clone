@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, noarchive">
+    <meta name="format-detection" content="telephone=no">
+    <title>Transfonter demo</title>
+    <link href="stylesheet.css" rel="stylesheet">
+    <style>
+        /*
+        http://meyerweb.com/eric/tools/css/reset/
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* common styles */
+        body {
+            background: #f1f1f1;
+            color: #000;
+        }
+        .page {
+            background: #fff;
+            width: 920px;
+            margin: 0 auto;
+            padding: 20px 20px 0 20px;
+            overflow: hidden;
+        }
+        .font-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            white-space: nowrap;
+            padding-bottom: 5px;
+        }
+        h1 {
+            position: relative;
+            background: #444;
+            font-size: 32px;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 -20px 12px -20px;
+        }
+        .letters {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        .s10:before {
+            content: '10px';
+        }
+        .s11:before {
+            content: '11px';
+        }
+        .s12:before {
+            content: '12px';
+        }
+        .s14:before {
+            content: '14px';
+        }
+        .s18:before {
+            content: '18px';
+        }
+        .s24:before {
+            content: '24px';
+        }
+        .s30:before {
+            content: '30px';
+        }
+        .s36:before {
+            content: '36px';
+        }
+        .s48:before {
+            content: '48px';
+        }
+        .s60:before {
+            content: '60px';
+        }
+        .s72:before {
+            content: '72px';
+        }
+        .s10:before, .s11:before, .s12:before, .s14:before,
+        .s18:before, .s24:before, .s30:before, .s36:before,
+        .s48:before, .s60:before, .s72:before {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: normal;
+            font-style: normal;
+            color: #999;
+            padding-right: 6px;
+        }
+        pre {
+            display: block;
+            position: relative;
+            padding: 9px;
+            margin: 0 0 10px;
+            font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+            font-size: 13px;
+            line-height: 1.428571429;
+            color: #333;
+            font-weight: normal !important;
+            font-style: normal !important;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        pre:after {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: 'Usage';
+            line-height: 1;
+            padding: 5px 8px;
+            font-size: 12px;
+            color: #767676;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-top: none;
+            border-radius: 0 4px 0 4px;
+            z-index: 10;
+        }
+        /* responsive */
+        @media (max-width: 959px) {
+            .page {
+                width: auto;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: normal;">
+        <h1>NYTFranklin Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham LightSC'; font-weight: 300; font-style: normal;">
+        <h1>NYTCheltenham LightSC</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham LightSC';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Sans WEB'; font-weight: 500; font-style: normal;">
+        <h1>NYTMag Sans WEB Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Sans WEB';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklin Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie TextExtraBold'; font-weight: 800; font-style: normal;">
+        <h1>NYTStymie TextExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie TextExtraBold';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 200; font-style: normal;">
+        <h1>NYTCheltenham ExtraLightItal</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 200;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Sans WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Sans WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Sans WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklinRE Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'FB Web Use Only'; font-weight: normal; font-style: italic;">
+        <h1>FB Web Use Only</h1>
+        <pre>.your-style {
+    font-family: 'FB Web Use Only';
+    font-weight: normal;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 200; font-style: normal;">
+        <h1>NYTStymie Ultralight</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 200;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Slab WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Slab WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Slab WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: normal;">
+        <h1>NYTFranklin Semibold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: bold; font-style: normal;">
+        <h1>NYTStymie Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: italic;">
+        <h1>NYTFranklin SemiboldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 300; font-style: italic;">
+        <h1>NYTStymie LightItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 300;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: italic;">
+        <h1>NYTFranklin BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamCond'; font-weight: 500; font-style: normal;">
+        <h1>NYTCheltenhamCond Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamCond';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: bold; font-style: italic;">
+        <h1>NYTCheltenham BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: normal;">
+        <h1>NYTFranklin Semibold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: italic;">
+        <h1>NYTFranklin ExtraBoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: italic;">
+        <h1>NYTFranklin SemiboldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: italic;">
+        <h1>NYTFranklin ExtraBoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 500; font-style: italic;">
+        <h1>NYTCheltenham MediumItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 500;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: italic;">
+        <h1>NYTFranklin MediumItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 500; font-style: normal;">
+        <h1>NYTCheltenham Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: italic;">
+        <h1>NYTFranklin HeadlineItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'FB Web Use Only'; font-weight: bold; font-style: italic;">
+        <h1>FB Web Use Only</h1>
+        <pre>.your-style {
+    font-family: 'FB Web Use Only';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: normal;">
+        <h1>NYTFranklin ExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamWide'; font-weight: normal; font-style: normal;">
+        <h1>NYTCheltenhamWide Regular</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamWide';
+    font-weight: normal;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTKarnak Display'; font-weight: 500; font-style: normal;">
+        <h1>NYTKarnak Display</h1>
+        <pre>.your-style {
+    font-family: 'NYTKarnak Display';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinRE Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamWide'; font-weight: normal; font-style: italic;">
+        <h1>NYTCheltenhamWide Italic</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamWide';
+    font-weight: normal;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 300; font-style: italic;">
+        <h1>NYTCheltenham LightItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 300;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamCond BoldXC'; font-weight: bold; font-style: normal;">
+        <h1>NYTCheltenhamCond BoldXC</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamCond BoldXC';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'FB Web Use Only'; font-weight: bold; font-style: normal;">
+        <h1>FB Web Use Only</h1>
+        <pre>.your-style {
+    font-family: 'FB Web Use Only';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: italic;">
+        <h1>NYTFranklin ExtraBoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Slab WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Slab WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Slab WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: italic;">
+        <h1>NYTFranklin LightItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 900; font-style: normal;">
+        <h1>NYTStymie Black</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 900;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: normal; font-style: normal;">
+        <h1>NYTImperial Regular</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: normal;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklin Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: italic;">
+        <h1>NYTFranklin HeadlineItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 800; font-style: normal;">
+        <h1>NYTCheltenham ExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: normal; font-style: italic;">
+        <h1>NYTImperial Italic</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: normal;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Serif Headline WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Serif Headline WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Serif Headline WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: italic;">
+        <h1>NYTFranklin BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklinRE Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: italic;">
+        <h1>NYTFranklin HeadlineItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklin Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: normal;">
+        <h1>NYTFranklin Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: italic;">
+        <h1>NYTFranklin MediumItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: bold; font-style: normal;">
+        <h1>NYTCheltenham Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: normal;">
+        <h1>NYTFranklin Semibold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: italic;">
+        <h1>NYTFranklin LightItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham Book'; font-weight: normal; font-style: normal;">
+        <h1>NYTCheltenham Book</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham Book';
+    font-weight: normal;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: normal;">
+        <h1>NYTFranklin Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: bold; font-style: normal;">
+        <h1>NYTImperial Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'FB Web Use Only'; font-weight: normal; font-style: normal;">
+        <h1>FB Web Use Only</h1>
+        <pre>.your-style {
+    font-family: 'FB Web Use Only';
+    font-weight: normal;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: 600; font-style: normal;">
+        <h1>NYTImperial Semibold</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: 600;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklin Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 600; font-style: italic;">
+        <h1>NYTFranklin SemiboldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 600;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: normal;">
+        <h1>NYTFranklin ExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Sans WEB'; font-weight: 500; font-style: normal;">
+        <h1>NYTMag Sans WEB Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Sans WEB';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 800; font-style: italic;">
+        <h1>NYTStymie ExtraBoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 800;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamCond'; font-weight: 300; font-style: normal;">
+        <h1>NYTCheltenhamCond Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamCond';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklinRE Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 300; font-style: italic;">
+        <h1>NYTFranklin LightItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 300;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 300; font-style: normal;">
+        <h1>NYTCheltenham Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Serif Headline WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Serif Headline WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Serif Headline WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 300; font-style: normal;">
+        <h1>NYTStymie Light</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 300;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTKarnak Text'; font-weight: 500; font-style: normal;">
+        <h1>NYTKarnak Text</h1>
+        <pre>.your-style {
+    font-family: 'NYTKarnak Text';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklin Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham Book'; font-weight: normal; font-style: italic;">
+        <h1>NYTCheltenham BookItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham Book';
+    font-weight: normal;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: normal;">
+        <h1>NYTFranklin Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenhamCond'; font-weight: bold; font-style: normal;">
+        <h1>NYTCheltenhamCond Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenhamCond';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: bold; font-style: italic;">
+        <h1>NYTFranklin BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie TextExtraBold'; font-weight: 800; font-style: normal;">
+        <h1>NYTStymie TextExtraBoldItal</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie TextExtraBold';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinRE Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: normal;">
+        <h1>NYTFranklin Headline</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 800; font-style: normal;">
+        <h1>NYTFranklin ExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinCW'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinCW Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinCW';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 800; font-style: normal;">
+        <h1>NYTCheltenham ExtraBoldItal</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 500; font-style: normal;">
+        <h1>NYTStymie Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: 600; font-style: italic;">
+        <h1>NYTImperial SemiboldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: 600;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: normal;">
+        <h1>NYTFranklin Headline</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinCW'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinCW Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinCW';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinCW'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinCW Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinCW';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 100; font-style: normal;">
+        <h1>NYTStymie Thin</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 100;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTImperial'; font-weight: bold; font-style: italic;">
+        <h1>NYTImperial BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTImperial';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTCheltenham'; font-weight: 200; font-style: normal;">
+        <h1>NYTCheltenham ExtraLight</h1>
+        <pre>.your-style {
+    font-family: 'NYTCheltenham';
+    font-weight: 200;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 500; font-style: italic;">
+        <h1>NYTStymie MediumItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 500;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTMag Sans WEB'; font-weight: bold; font-style: normal;">
+        <h1>NYTMag Sans WEB Bold</h1>
+        <pre>.your-style {
+    font-family: 'NYTMag Sans WEB';
+    font-weight: bold;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: bold; font-style: italic;">
+        <h1>NYTStymie BoldItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: bold;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin Headline'; font-weight: 900; font-style: normal;">
+        <h1>NYTFranklin Headline</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin Headline';
+    font-weight: 900;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklinRE'; font-weight: 500; font-style: normal;">
+        <h1>NYTFranklinRE Medium</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklinRE';
+    font-weight: 500;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTFranklin'; font-weight: 500; font-style: italic;">
+        <h1>NYTFranklin MediumItalic</h1>
+        <pre>.your-style {
+    font-family: 'NYTFranklin';
+    font-weight: 500;
+    font-style: italic;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NYTStymie'; font-weight: 800; font-style: normal;">
+        <h1>NYTStymie ExtraBold</h1>
+        <pre>.your-style {
+    font-family: 'NYTStymie';
+    font-weight: 800;
+    font-style: normal;
+}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                0123456789.:,;()*!?'@#<>$%&^+-=~
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

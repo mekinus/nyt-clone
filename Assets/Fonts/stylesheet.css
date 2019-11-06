@@ -1,0 +1,775 @@
+@font-face {
+  font-family: 'NYTFranklin';
+  font-weight: 300;
+  font-style: normal;
+  src: url('NYTFranklin-Light.woff2') format('woff2'),
+    url('NYTFranklin-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTCheltenham LightSC';
+  font-weight: 300;
+  font-style: normal;
+  src: url('NYTCheltenham-LightSC.woff2') format('woff2'),
+    url('NYTCheltenham-LightSC.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTMag Sans WEB';
+  font-weight: 500;
+  font-style: normal;
+  src: url('NYTMagSansWEB-Medium.woff2') format('woff2'),
+    url('NYTMagSansWEB-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  font-weight: bold;
+  font-style: normal;
+  src: url('NYTFranklin-Bold.woff2') format('woff2'),
+    url('NYTFranklin-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTStymie TextExtraBold';
+  font-weight: 800;
+  font-style: normal;
+  src: url('NYTStymie-TextExtraBold.woff2') format('woff2'),
+    url('NYTStymie-TextExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  font-weight: 200;
+  font-style: normal;
+  src: url('NYTCheltenham-ExtraLightItal.woff2') format('woff2'),
+    url('NYTCheltenham-ExtraLightItal.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTMag Sans WEB';
+  font-weight: bold;
+  font-style: normal;
+  src: url('NYTMagSansWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSansWEB-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  font-weight: bold;
+  font-style: normal;
+  src: url('NYTFranklinRE-Bold.woff2') format('woff2'),
+    url('NYTFranklinRE-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FB Web Use Only';
+  font-weight: normal;
+  font-style: italic;
+  src: url('Munged-1CAZGJqM0y.woff2') format('woff2'),
+    url('Munged-1CAZGJqM0y.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  font-weight: 200;
+  font-style: normal;
+  src: url('NYTStymie-Ultralight.woff2') format('woff2'),
+    url('NYTStymie-Ultralight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTMag Slab WEB';
+  font-weight: bold;
+  font-style: normal;
+  src: url('NYTMagSlabWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSlabWEB-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  font-weight: 600;
+  font-style: normal;
+  src: url('NYTFranklin-Semibold.woff2') format('woff2'),
+    url('NYTFranklin-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-Bold.woff2') format('woff2'),
+    url('NYTStymie-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-SemiboldItalic.woff2') format('woff2'),
+    url('NYTFranklin-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-LightItalic.woff2') format('woff2'),
+    url('NYTStymie-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-BoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamCond';
+  src: url('NYTCheltenhamCond-Medium.woff2') format('woff2'),
+    url('NYTCheltenhamCond-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-BoldItalic.woff2') format('woff2'),
+    url('NYTCheltenham-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Semibold.woff2') format('woff2'),
+    url('NYTFranklin-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-SemiboldItalic.woff2') format('woff2'),
+    url('NYTFranklin-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-MediumItalic.woff2') format('woff2'),
+    url('NYTCheltenham-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-MediumItalic.woff2') format('woff2'),
+    url('NYTFranklin-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-Medium.woff2') format('woff2'),
+    url('NYTCheltenham-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-HeadlineItalic.woff2') format('woff2'),
+    url('NYTFranklin-HeadlineItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FB Web Use Only';
+  src: url('Munged-Z4O6yhnkcC.woff2') format('woff2'),
+    url('Munged-Z4O6yhnkcC.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBold.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamWide';
+  src: url('NYTCheltenhamWide-Regular.woff2') format('woff2'),
+    url('NYTCheltenhamWide-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTKarnak Display';
+  src: url('NYTKarnak-Display.woff2') format('woff2'),
+    url('NYTKarnak-Display.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  src: url('NYTFranklinRE-Medium.woff2') format('woff2'),
+    url('NYTFranklinRE-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamWide';
+  src: url('NYTCheltenhamWide-Italic.woff2') format('woff2'),
+    url('NYTCheltenhamWide-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-LightItalic.woff2') format('woff2'),
+    url('NYTCheltenham-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamCond BoldXC';
+  src: url('NYTCheltenhamCond-BoldXC.woff2') format('woff2'),
+    url('NYTCheltenhamCond-BoldXC.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FB Web Use Only';
+  src: url('Munged-cuCZgmuObw.woff2') format('woff2'),
+    url('Munged-cuCZgmuObw.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTMag Slab WEB';
+  src: url('NYTMagSlabWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSlabWEB-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-LightItalic.woff2') format('woff2'),
+    url('NYTFranklin-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-Black.woff2') format('woff2'),
+    url('NYTStymie-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-Regular.woff2') format('woff2'),
+    url('NYTImperial-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Bold.woff2') format('woff2'),
+    url('NYTFranklin-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-HeadlineItalic.woff2') format('woff2'),
+    url('NYTFranklin-HeadlineItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-ExtraBold.woff2') format('woff2'),
+    url('NYTCheltenham-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-Italic.woff2') format('woff2'),
+    url('NYTImperial-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTMag Serif Headline WEB';
+  src: url('NYTMagSerifHeadlineWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSerifHeadlineWEB-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-BoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  src: url('NYTFranklinRE-Bold.woff2') format('woff2'),
+    url('NYTFranklinRE-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-HeadlineItalic.woff2') format('woff2'),
+    url('NYTFranklin-HeadlineItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Medium.woff2') format('woff2'),
+    url('NYTFranklin-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Light.woff2') format('woff2'),
+    url('NYTFranklin-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-MediumItalic.woff2') format('woff2'),
+    url('NYTFranklin-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-Bold.woff2') format('woff2'),
+    url('NYTCheltenham-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Semibold.woff2') format('woff2'),
+    url('NYTFranklin-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-LightItalic.woff2') format('woff2'),
+    url('NYTFranklin-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham Book';
+  src: url('NYTCheltenham-Book.woff2') format('woff2'),
+    url('NYTCheltenham-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Light.woff2') format('woff2'),
+    url('NYTFranklin-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-Bold.woff2') format('woff2'),
+    url('NYTImperial-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FB Web Use Only';
+  src: url('Munged-FeRJttgytI.woff2') format('woff2'),
+    url('Munged-FeRJttgytI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-Semibold.woff2') format('woff2'),
+    url('NYTImperial-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Medium.woff2') format('woff2'),
+    url('NYTFranklin-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-SemiboldItalic.woff2') format('woff2'),
+    url('NYTFranklin-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBold.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTMag Sans WEB';
+  src: url('NYTMagSansWEB-Medium.woff2') format('woff2'),
+    url('NYTMagSansWEB-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-ExtraBoldItalic.woff2') format('woff2'),
+    url('NYTStymie-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamCond';
+  src: url('NYTCheltenhamCond-Light.woff2') format('woff2'),
+    url('NYTCheltenhamCond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  src: url('NYTFranklinRE-Bold.woff2') format('woff2'),
+    url('NYTFranklinRE-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-LightItalic.woff2') format('woff2'),
+    url('NYTFranklin-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-Light.woff2') format('woff2'),
+    url('NYTCheltenham-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTMag Serif Headline WEB';
+  src: url('NYTMagSerifHeadlineWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSerifHeadlineWEB-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-Light.woff2') format('woff2'),
+    url('NYTStymie-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTKarnak Text';
+  src: url('NYTKarnak-Text.woff2') format('woff2'),
+    url('NYTKarnak-Text.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Medium.woff2') format('woff2'),
+    url('NYTFranklin-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham Book';
+  src: url('NYTCheltenham-BookItalic.woff2') format('woff2'),
+    url('NYTCheltenham-BookItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-Bold.woff2') format('woff2'),
+    url('NYTFranklin-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenhamCond';
+  src: url('NYTCheltenhamCond-Bold.woff2') format('woff2'),
+    url('NYTCheltenhamCond-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-BoldItalic.woff2') format('woff2'),
+    url('NYTFranklin-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTStymie TextExtraBold';
+  src: url('NYTStymie-TextExtraBoldItal.woff2') format('woff2'),
+    url('NYTStymie-TextExtraBoldItal.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  src: url('NYTFranklinRE-Medium.woff2') format('woff2'),
+    url('NYTFranklinRE-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-Headline.woff2') format('woff2'),
+    url('NYTFranklin-Headline.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-ExtraBold.woff2') format('woff2'),
+    url('NYTFranklin-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinCW';
+  src: url('NYTFranklinCW-Medium.woff2') format('woff2'),
+    url('NYTFranklinCW-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-ExtraBoldItal.woff2') format('woff2'),
+    url('NYTCheltenham-ExtraBoldItal.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-Medium.woff2') format('woff2'),
+    url('NYTStymie-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-SemiboldItalic.woff2') format('woff2'),
+    url('NYTImperial-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-Headline.woff2') format('woff2'),
+    url('NYTFranklin-Headline.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinCW';
+  src: url('NYTFranklinCW-Medium.woff2') format('woff2'),
+    url('NYTFranklinCW-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinCW';
+  src: url('NYTFranklinCW-Medium.woff2') format('woff2'),
+    url('NYTFranklinCW-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-Thin.woff2') format('woff2'),
+    url('NYTStymie-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTImperial';
+  src: url('NYTImperial-BoldItalic.woff2') format('woff2'),
+    url('NYTImperial-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTCheltenham';
+  src: url('NYTCheltenham-ExtraLight.woff2') format('woff2'),
+    url('NYTCheltenham-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-MediumItalic.woff2') format('woff2'),
+    url('NYTStymie-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTMag Sans WEB';
+  src: url('NYTMagSansWEB-Bold.woff2') format('woff2'),
+    url('NYTMagSansWEB-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-BoldItalic.woff2') format('woff2'),
+    url('NYTStymie-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTFranklin Headline';
+  src: url('NYTFranklin-Headline.woff2') format('woff2'),
+    url('NYTFranklin-Headline.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklinRE';
+  src: url('NYTFranklinRE-Medium.woff2') format('woff2'),
+    url('NYTFranklinRE-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('NYTFranklin-MediumItalic.woff2') format('woff2'),
+    url('NYTFranklin-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('NYTStymie-ExtraBold.woff2') format('woff2'),
+    url('NYTStymie-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
