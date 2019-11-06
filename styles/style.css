@@ -412,6 +412,14 @@ ul li hr {
   height: 300px;
 }
 
+.box1 a {
+  text-decoration: none;
+}
+
+.box1 a:hover {
+  text-decoration: underline;
+}
+
 .left2 {
   display: flex;
   flex-wrap: wrap;
